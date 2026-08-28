@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolios de creadores y profesionales desarrollados por Cogeso UGC.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>Portfolios · Cogeso UGC</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b0b0c'/%3E%3Cpath d='M42 19c-3-3-6-5-11-5-10 0-18 8-18 18s8 18 18 18c5 0 9-2 12-5l-7-7c-1 1-3 2-5 2-5 0-8-3-8-8s3-8 8-8c2 0 4 1 5 2z' fill='%23f04d75'/%3E%3C/svg%3E">
+  <style>
+    :root{--bg:#0b0b0c;--surface:#141416;--ink:#f5f1eb;--muted:#a7a1a2;--line:#2a292c;--accent:#f04d75;--max:1180px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .topbar{width:min(calc(100% - 40px),var(--max));height:86px;margin:auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-size:.76rem;font-weight:800;letter-spacing:.2em}
+    .mark{width:34px;height:34px;border-radius:10px;background:var(--accent);display:grid;place-items:center;color:#111;font-size:1.05rem;letter-spacing:0}
+    .topbar span:last-child{color:var(--muted);font-size:.68rem;letter-spacing:.12em}
+    main{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .hero{min-height:480px;padding:105px 0 90px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);gap:70px;align-items:end;border-bottom:1px solid var(--line)}
+    .eyebrow,.number{margin:0 0 24px;color:var(--accent);font-size:.68rem;font-weight:800;letter-spacing:.22em}
+    h1{max-width:780px;margin:0;font-size:clamp(3.2rem,8vw,7.6rem);line-height:.82;letter-spacing:-.07em}
+    h1 em{color:var(--accent);font-family:Georgia,serif;font-weight:400}
+    .intro{max-width:370px;margin:0 0 3px;color:var(--muted);font-size:clamp(1rem,1.7vw,1.25rem);line-height:1.65}
+    .collection{padding:82px 0 110px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+    h2{margin:0;font-size:clamp(2rem,4.4vw,4.4rem);line-height:.9;letter-spacing:-.055em}
+    .count{margin:0;color:var(--muted);font-size:.78rem;letter-spacing:.14em}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .portfolio{position:relative;min-height:460px;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:var(--surface);isolation:isolate}
+    .portfolio img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.85);transition:transform .55s ease,filter .55s ease}
+    .portfolio:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.9) 100%)}
+    .portfolio-content{position:absolute;z-index:2;inset:auto 0 0;padding:34px}
+    .portfolio .number{color:#fff;margin-bottom:14px}
+    .portfolio h3{margin:0 0 11px;font-size:clamp(2rem,4vw,3.6rem);line-height:.9;letter-spacing:-.045em}
+    .portfolio p{max-width:460px;margin:0;color:#d4d0cd;line-height:1.5}
+    .open{position:absolute;z-index:3;top:25px;right:25px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-size:1.45rem;transition:transform .25s ease}
+    .portfolio:hover img{transform:scale(1.035);filter:saturate(1)}
+    .portfolio:hover .open{transform:rotate(45deg)}
+    .coming{min-height:460px;padding:34px;border:1px dashed #38373a;border-radius:24px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#121214,#0d0d0e);color:var(--muted)}
+    .coming strong{max-width:330px;color:#cac5c2;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.05;letter-spacing:-.04em}
+    footer{width:min(calc(100% - 40px),var(--max));margin:auto;padding:28px 0 42px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.72rem;letter-spacing:.09em}
+    @media(max-width:760px){.topbar{height:72px}.topbar>span:last-child{display:none}.hero{min-height:auto;padding:80px 0 70px;grid-template-columns:1fr;gap:36px}.intro{max-width:520px}.collection{padding:62px 0 80px}.section-head{align-items:start;flex-direction:column}.grid{grid-template-columns:1fr}.portfolio,.coming{min-height:410px}.portfolio-content{padding:26px}.coming{display:none}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.portfolio img,.open{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Inicio"><span class="mark">C</span><span>COGESO UGC · PORTFOLIOS</span></a>
+    <span>CREADORES CON IDENTIDAD</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">PORTFOLIOS PROFESIONALES</p>
+        <h1>HISTORIAS QUE<br><em>CONECTAN.</em></h1>
+      </div>
+      <p class="intro">Un espacio para descubrir profesionales, creadores y marcas personales con una voz propia.</p>
+    </section>
+    <section class="collection" aria-labelledby="portfolios-title">
+      <header class="section-head">
+        <div><p class="eyebrow">COLECCIÓN</p><h2 id="portfolios-title">CONOCE SU TRABAJO.</h2></div>
+        <p class="count">01 PORTFOLIO PUBLICADO</p>
+      </header>
+      <div class="grid">
+        <a class="portfolio" href="joiker-fashion/" aria-label="Abrir el portfolio de Joiker Fashion">
+          <img src="joiker-fashion/assets/joiker-perfil.jpg" alt="Joiker Fashion en su espacio profesional">
+          <span class="open" aria-hidden="true">↗</span>
+          <div class="portfolio-content">
+            <p class="number">01 · ESTILISMO Y CREACIÓN DE CONTENIDO</p>
+            <h3>JOIKER FASHION</h3>
+            <p>Estilista Integral Santiaguero con más de 30 años de experiencia. Cortes, promociones, podcast y consejos.</p>
+          </div>
+        </a>
+        <div class="coming" aria-hidden="true"><span>PRÓXIMAMENTE · 02</span><strong>NUEVAS HISTORIAS ESTÁN POR LLEGAR.</strong></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>COGESO UGC © 2026</span><span>PORTFOLIOS PARA CRECER Y CONECTAR</span></footer>
+</body>
+</html>
