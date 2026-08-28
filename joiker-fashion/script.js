@@ -3,7 +3,7 @@ const CONTACT = {
   instagram: "https://www.instagram.com/joiker_fashion_oficial/",
   tiktok: "https://www.tiktok.com/@joiker.fashion.sa",
   facebook: "https://www.facebook.com/share/1BKr5Jvkee/",
-  email: "https://mail.google.com/mail/?view=cm&fs=1&to=joikerrivero@gmail.com"
+  email: "mailto:joikerrivero@gmail.com?subject=Consulta%20desde%20el%20portfolio%20de%20Joiker%20Fashion"
 };
 
 const toast = document.querySelector(".toast");
@@ -22,10 +22,6 @@ configure(".js-instagram", CONTACT.instagram);
 configure(".js-tiktok", CONTACT.tiktok);
 configure(".js-facebook", CONTACT.facebook);
 configure(".js-email", CONTACT.email);
-document.querySelectorAll(".js-email").forEach(link => {
-  link.target = "_blank";
-  link.rel = "noopener";
-});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 const menu = document.querySelector(".nav");
